@@ -7,6 +7,7 @@
 #include "cmd/DisplayCoinsCommand.h"
 #include "cmd/ResetStockCommand.h"
 #include "cmd/ResetCoinsCommand.h"
+#include "cmd/SaveCommand.h"
 
 namespace ppd {
     ReturnType Invoker::doCommand(int cmd) {
@@ -20,7 +21,8 @@ namespace ppd {
 
         }
         else if (cmd == 3){
-
+            SaveCommand sc;
+            response = sc.execute(*this);
         }
         else if (cmd == 4) {
 
